@@ -24,7 +24,8 @@ export const CartCard = ({ cart, setCart }) => {
     cart.map(
       (itemDiscount) =>
         (discountTotal =
-          itemDiscount.wasPrice * itemDiscount.offer + discountTotal)
+          itemDiscount.wasPrice * itemDiscount.offer * itemDiscount.count +
+          discountTotal)
     );
     setDiscount(discountTotal);
   });
@@ -48,112 +49,118 @@ export const CartCard = ({ cart, setCart }) => {
     setCart(removedItem);
   };
   return (
-    <div className="container cart-card">
-      {cart.length > 0 ? (
-        <div className=" m-5 row d-flex justify-content-center">
-          <div className="border col-md-8  me-md-4 mb-md-0 mb-4">
-            <div className="cart-items m-3">
-              {cart.map((item, index) => (
-                <div key={index}>
-                  <div className="d-flex justify-content-center align-items-center">
-                    <div className="col-md-2 col-sm-4 col-8">
-                      <div className="image">
-                        <img
-                          src={item.image}
-                          className="card-img-top"
-                          alt="image"
-                        />
+    <div className="cart-main">
+      <div className="container-sm cart-card">
+        {cart.length > 0 ? (
+          <div className=" m-sm-5 row d-flex justify-content-center">
+            <div className="border col-md-8 col-12 me-md-4 mx-0 mb-sm-0 mb-4">
+              <div className="cart-items m-3">
+                {cart.map((item, index) => (
+                  <div key={index} className="mb-4">
+                    <div className="d-flex justify-content-center align-items-center">
+                      <div className="col-md-2 col-sm-4 col-8">
+                        <div className="image">
+                          <img
+                            src={item.image}
+                            className="card-img-top"
+                            alt="image"
+                          />
+                        </div>
+                      </div>
+                      <div className="card-body ms-3">
+                        <h5 className="card-title">{item.name}</h5>
+                        <p className="card-text ">
+                          <span className="was-price">₹{item.wasPrice}</span>
+                          &ensp; ₹{item.wasPrice - item.wasPrice * item.offer}
+                          &ensp;
+                          <span className="offer">{item.offer * 100}% Off</span>
+                        </p>
                       </div>
                     </div>
-                    <div className="card-body">
-                      <h5 className="card-title">{item.name}</h5>
-                      <p className="card-text ">
-                        <span className="was-price">₹{item.wasPrice}</span>
-                        &ensp; ₹{item.wasPrice - item.wasPrice * item.offer}
-                        &ensp;
-                        <span className="offer">{item.offer * 100}% Off</span>
+                    <div className="d-flex bottom-div flex-wrap justify-content-sm-start justify-content-center">
+                      <div className="d-flex mb-sm-0 mb-2">
+                        <button
+                          className="counter-btn btn me-2"
+                          onClick={() => addSubItem(item, -1)}>
+                          -
+                        </button>
+                        <div className="counter border px-3 py-0">
+                          <p>{item.count}</p>
+                        </div>
+                        <button
+                          className="counter-btn btn ms-2"
+                          onClick={() => addSubItem(item, 1)}>
+                          +
+                        </button>
+                      </div>
+                      <Link
+                        to="/wishlist"
+                        className="nav-link btn mb-sm-0 mb-2">
+                        SAVE FOR LATER
+                      </Link>
+                      <a
+                        onClick={() => removeItem(item)}
+                        className="nav-link btn mb-sm-0 mb-2">
+                        REMOVE
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="placeorder d-flex justify-content-end border py-3 pe-3">
+                <button className="btn">PLACE ORDER</button>
+              </div>
+            </div>
+
+            {/* *Order Summary */}
+            <div className="  col-md-3  ">
+              <div className="p-4 border">
+                <p className="price-details">PRICE DETAILS</p>
+                <hr />
+
+                {cart.map((items, index) => (
+                  <div key={index}>
+                    <div className="d-flex justify-content-between">
+                      <p>
+                        {items.name} (x{items.count})
                       </p>
+                      <p>₹{items.wasPrice * items.count}</p>
                     </div>
                   </div>
-                  <div className="d-flex">
-                    <div className="d-flex">
-                      <button
-                        className="counter-btn"
-                        onClick={() => addSubItem(item, -1)}>
-                        -
-                      </button>
-                      <div className="counter border px-3 py-0">
-                        <p>{item.count}</p>
-                      </div>
-                      <button
-                        className="counter-btn"
-                        onClick={() => addSubItem(item, 1)}>
-                        +
-                      </button>
-                    </div>
-                    <Link to="/wishlist" className="nav-link btn">
-                      SAVE FOR LATER
-                    </Link>
-                    <a
-                      onClick={() => removeItem(item)}
-                      className="nav-link btn ">
-                      REMOVE
-                    </a>
-                  </div>
+                ))}
+                <div className="d-flex justify-content-between">
+                  <p>Discount </p>
+                  <p>- ₹{discount}</p>
                 </div>
-              ))}
-            </div>
-            <div className="placeorder d-flex justify-content-end border py-3 pe-3">
-              <button className="btn">PLACE ORDER</button>
-            </div>
-          </div>
-          <div className="  col-md-3  ">
-            <div className="p-4 border">
-              <p className="price-details">PRICE DETAILS</p>
-              <hr />
-
-              {cart.map((items, index) => (
-                <div>
-                  <div className="d-flex justify-content-between">
-                    <h5>
-                      {items.name} x {items.count}
-                    </h5>
-                    <h5>₹{items.wasPrice * items.count}</h5>
-                  </div>
+                <hr />
+                <div className="d-flex justify-content-between ">
+                  <p className="total">Total</p>
+                  <p className="total">₹{price}</p>
                 </div>
-              ))}
-              <div className="d-flex justify-content-between">
-                <h5>Discount </h5>
-                <h5>- ₹{discount}</h5>
+                <hr />
+                <p className="green">You will save ₹{discount} on this order</p>
               </div>
-              <hr />
-              <div className="d-flex justify-content-between">
-                <h5>Total</h5>
-                <h5>₹{price}</h5>
-              </div>
-              <hr />
-              <p>You will save ₹{discount} on this order</p>
             </div>
           </div>
-        </div>
-      ) : (
-        <div className="container">
-          <div className="m-5 border p-5 d-flex flex-column justify-content-center align-items-center">
-            <img
-              src={mtCart}
-              alt="Empty Cart"
-              className="col-md-8 col-sm-10 col-12"
-            />
-            <h3>Your cart is empty</h3>
+        ) : (
+          <div className="container">
+            <div className="m-5 border p-5 d-flex flex-column justify-content-center align-items-center">
+              <img
+                src={mtCart}
+                alt="Empty Cart"
+                className="col-md-8 col-sm-10 col-12"
+              />
+              <h3>Your cart is empty</h3>
 
-            <div className="placeorder">
-              <Link to="/" className="btn">
-                Home
-              </Link>
+              <div className="placeorder">
+                <Link to="/" className="btn">
+                  Home
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

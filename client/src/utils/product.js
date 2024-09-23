@@ -13,7 +13,7 @@ export const luggageList = [
 
     wasPrice: 2960,
     count: 1,
-    offer: 0.5,
+    offer: 0.3,
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const luggageList = [
 
     wasPrice: 3240,
     count: 1,
-    offer: 0.5,
+    offer: 0.4,
   },
   {
     id: 3,
