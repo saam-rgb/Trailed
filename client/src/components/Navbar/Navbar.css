@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+
+.nav-item {
+  font-size: 20px !important;
+  font-weight: 600;
+}
+.navi {
+  overflow: hidden;
+}
+.navi .nav-container {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #81818134, rgb(255, 255, 255));
+}
+.logo .nav-link {
+  color: #8a2be2;
+  font-family: "Rock Salt", cursive;
+  font-weight: 600;
+}
+.nav-link:active {
+  color: #8a2be2 !important;
+  text-decoration: line-through !important;
+}

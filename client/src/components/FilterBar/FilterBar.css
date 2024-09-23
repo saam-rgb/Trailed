@@ -1,0 +1,20 @@
+.btn-group .btn {
+  background-color: #8a2be2 !important;
+  color: #fff;
+  padding: 12px !important;
+}
+.btn-group .btn:hover {
+  color: orange;
+}
+
+.btn-group .show {
+  color: #fff !important;
+}
+.dropdown-menu {
+  width: 100%;
+  background-image: linear-gradient(to bottom, #8a2be2, #892be2cd);
+  color: #fff !important;
+}
+.dropdown-item {
+  color: #fff !important;
+}

@@ -1,0 +1,10 @@
+.carousel-indicators {
+  background-color: transparent;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: transparent;
+}
+.marquee {
+  font-size: 36px;
+}
