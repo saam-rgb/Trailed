@@ -2,3 +2,15 @@
   background-color: #735da5;
   color: #fff;
 }
+.nav-item {
+  margin-bottom: 12px !important;
+}
+.nav-item .navLink {
+  font-size: 16px !important;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+}
+.tag {
+  font-weight: 800;
+}

@@ -1,12 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../../public/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faHeart,
-  faCartShopping,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUser, faHeart } from "@fortawesome/free-regular-svg-icons";
+import { BsCart3, BsHeart } from "react-icons/bs";
 import "./Navbar.css";
 
 export const Navbar = () => {
@@ -26,22 +23,28 @@ export const Navbar = () => {
           </div>
 
           <div className="searchbar col-md-4">
-            <input type="search" name="" id="" className="form-control" />
+            <input
+              type="search"
+              name=""
+              id=""
+              className="form-control"
+              placeholder="Search for Products, Models and More"
+            />
           </div>
           <div className="profile d-flex col-md-4 justify-content-end">
             <h3>
               <Link className="nav-link px-2" to="/profile">
-                <FontAwesomeIcon icon={faUser} />
+                <FontAwesomeIcon icon={faUser} className="icon-color" />
               </Link>
             </h3>
             <h3>
               <Link className="nav-link px-2" to="/wishlist">
-                <FontAwesomeIcon icon={faHeart} />
+                <BsHeart className="icon-color" />
               </Link>
             </h3>
             <h3>
               <Link className="nav-link px-2" to="/cart">
-                <FontAwesomeIcon icon={faCartShopping} />
+                <BsCart3 className="icon-color" />
               </Link>
             </h3>
           </div>

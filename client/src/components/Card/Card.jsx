@@ -13,7 +13,7 @@ export const Card = ({ cart, setCart }) => {
   };
   return (
     <div className="card-container mb-5">
-      <div className="gap-3 row">
+      <div className="gap-3 row d-flex  justify-content-center align-items-start">
         {luggageList.map((list, index) => (
           <div
             className="card col-md-4 col-sm-4"

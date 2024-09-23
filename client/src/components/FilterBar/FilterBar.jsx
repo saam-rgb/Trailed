@@ -4,7 +4,7 @@ import "./FilterBar.css";
 
 export const FilterBar = () => {
   return (
-    <div className="d-flex flex-row flex-md-column flex-wrap ">
+    <div className="d-flex flex-row flex-md-column flex-wrap justify-content-center">
       {filterBar.map((filters, index) => (
         <div
           className="btn-group mb-2 ms-md-3 ms-lg-5 pe-2 pe-md-0"

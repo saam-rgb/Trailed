@@ -3,11 +3,11 @@ export const filterBar = [
     name: "Category",
     drop: [
       {
-        type: "HARD LUGGAGE",
+        type: "Hard Luggage",
         check: false,
       },
       {
-        type: "SOFT LUGGAGE",
+        type: "Soft Luggage",
         check: false,
       },
     ],
@@ -45,19 +45,19 @@ export const filterBar = [
     name: "Size",
     drop: [
       {
-        type: "CABIN",
+        type: "Cabin",
         check: false,
       },
       {
-        type: "LARGE",
+        type: "Large",
         check: false,
       },
       {
-        type: "MEDIUM",
+        type: "Medium",
         check: false,
       },
       {
-        type: "SET OF 3",
+        type: "Set of 3",
         check: false,
       },
     ],
@@ -75,7 +75,7 @@ export const filterBar = [
         check: false,
       },
       {
-        type: "10000 & ABOVE",
+        type: "10000 & Above",
         check: false,
       },
     ],

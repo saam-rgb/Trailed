@@ -10,75 +10,89 @@ export const Footer = () => {
           <h3 className="tag">Warm hugs, Trailed</h3>
           <p>
             We’ll email you important updates, new launch info and the
-            occasional raccoon GIF. And, exclusive sale details of course.
+            occasional cockroach GIF. And, exclusive sale details of course.
           </p>
           <input type="text" className="form-control" placeholder="E-mail" />
         </div>
         <div className="col-md-3">
           <p>
             <strong>
-              For Gifting & Corporate orders WhatsApp us at +91 89048 92616 or
-              email bulkorders@mokobara.com
+              For Gifting & Corporate orders WhatsApp us at +91 91502 45248 or
+              email bulkorders@trailed.com
             </strong>
           </p>
         </div>
         <div className="col-md-3">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to="/faq" className="nav-link">
+              <Link to="/faq" className="navLink">
                 FAQ
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/warranty" className="nav-link">
+              <Link to="/warranty" className="navLink">
                 Warranty Registration
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="" className="nav-link">
+              <Link to="" className="navLink">
                 Claim My Warranty
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="" className="nav-link">
+              <Link to="" className="navLink">
                 Returns & Exchanges
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="" className="nav-link">
+              <Link to="" className="navLink">
                 Return & Refund Policy
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="" className="nav-link">
+              <Link to="" className="navLink">
                 Terms of Service
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="" className="nav-link">
+              <Link to="" className="navLink">
                 Privacy Policy
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="" className="nav-link">
-                mclub Terms and Conditions
+              <Link to="" className="navLink">
+                tclub Terms and Conditions
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="" className="nav-link">
-                Join our team! - careers@mokobara.com{" "}
+              <Link to="" className="navLink">
+                Join our team! - careers@trailed.com{" "}
               </Link>
             </li>
           </ul>
         </div>
         <div className="col-md-3">
-          <p>
-            #GoingPlaces We believe humans are like sharks. They have to keep
-            moving to thrive. To grow. To feel alive. As long as they have a
-            destination in mind - whether it’s a life goal, career aim or even a
-            trip - they have a purpose in life. They’re #GoingPlaces. We’re on a
-            mission To help folks who are #GoingPlaces
-          </p>
+          <div>
+            <p className="tag">#LeaveAMark</p>
+            <p>
+              We believe that life's true purpose is found in movement—whether
+              it's chasing a dream, advancing your career, or embarking on a
+              journey. Like the adventurers who never stop exploring, every step
+              forward is a chance to leave a lasting impression.
+            </p>
+            <p>
+              At Trailed, we know that your journey begins the moment you set
+              your sights on a destination, not when you arrive. Our stylish and
+              durable gear is designed to make your travel seamless, letting you
+              focus on the path ahead.
+            </p>
+            <p>
+              From city streets to mountain trails, every trip you take is an
+              opportunity to leave your mark on the world. And with Trailed,
+              you're not just going places—you’re making sure they remember you
+              were there.
+            </p>
+          </div>
         </div>
       </div>
     </div>
