@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../../../public/logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faHeart } from "@fortawesome/free-regular-svg-icons";
-import { BsCart3, BsHeart } from "react-icons/bs";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import "./Navbar.css";
 
 export const Navbar = () => {
@@ -34,17 +34,17 @@ export const Navbar = () => {
           <div className="profile d-flex col-md-4 justify-content-end">
             <h3>
               <Link className="nav-link px-2" to="/profile">
-                <FontAwesomeIcon icon={faUser} className="icon-color" />
+                <AccountCircleOutlinedIcon className="icon-color" />
               </Link>
             </h3>
             <h3>
               <Link className="nav-link px-2" to="/wishlist">
-                <BsHeart className="icon-color" />
+                <FavoriteBorderOutlinedIcon className="icon-color" />
               </Link>
             </h3>
             <h3>
               <Link className="nav-link px-2" to="/cart">
-                <BsCart3 className="icon-color" />
+                <ShoppingCartOutlinedIcon className="icon-color" />
               </Link>
             </h3>
           </div>

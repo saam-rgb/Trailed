@@ -1,5 +1,5 @@
 .bg {
-  background-color: #735da5;
+  background-color: #3f3d56;
   color: #fff;
 }
 .nav-item {
@@ -11,6 +11,10 @@
   text-decoration: none;
   color: #fff;
 }
+.nav-item .navLink:hover {
+  color: #ffc200;
+}
 .tag {
+  color: #ffc200;
   font-weight: 800;
 }

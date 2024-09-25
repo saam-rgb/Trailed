@@ -1,35 +1,45 @@
 import React from "react";
-
 import "./Card.css";
-import { luggageList } from "../../utils/product";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 // * Card in Product page
-export const Card = ({ cart, setCart }) => {
+export const Card = ({ cart, setCart, like, setLike, lists }) => {
+  const addWishlist = (params) => {
+    console.log(params);
+    console.log(...like);
+    setLike([...like, params]);
+  };
   const addCart = (params) => {
     console.log(params);
+
     setCart([...cart, params]);
   };
   return (
     <div className="card-container mb-5">
-      <div className="gap-3 row d-flex  justify-content-center align-items-start">
-        {luggageList.map((list, index) => (
+      <div className="gap-3 row d-flex  justify-content-start align-items-start">
+        {lists.map((list, index) => (
+          // let [wasPrice, image, name, offer] = list;
           <div
-            className="card col-md-4 col-sm-4"
+            className="card col-md-4 col-sm-4 col-12"
             style={{ width: 18 + "rem" }}
             key={index}>
             <div>
               <div className="position-relative">
                 <img src={list.image} className="card-img-top" alt="image" />
-                <p className="position-absolute top-0 end-0"></p>
+                <div className="position-absolute  end-0 icon-div">
+                  <FavoriteBorderOutlinedIcon
+                    className="icon-card"
+                    onClick={() => addWishlist(list)}
+                  />
+                </div>
               </div>
             </div>
             <div className="card-body d-flex align-items-start justify-content-between">
               <div>
                 <h5 className="card-title">{list.name}</h5>
                 <p className="card-text">
-                  ₹ {list.wasPrice - list.wasPrice * list.offer}
+                  ₹{list.wasPrice - list.wasPrice * list.offer} &ensp;
+                  <span className="was-price">₹{list.wasPrice}</span>
                 </p>
               </div>
               <div className="cart-btn">

@@ -1,10 +1,11 @@
 .btn-group .btn {
-  background-color: #8a2be2 !important;
+  background-color: #474559 !important;
   color: #fff;
   padding: 12px !important;
 }
 .btn-group .btn:hover {
-  color: orange;
+  background-color: #ffc200 !important;
+  color: #474559;
 }
 
 .btn-group .show {
@@ -12,13 +13,13 @@
 }
 .dropdown-menu {
   width: 100%;
-  background-image: linear-gradient(to bottom, #8a2be2, #892be2cd);
+  background-image: linear-gradient(to bottom, #474559, #2c2c2c);
   color: #fff !important;
 }
 .dropdown-item {
   color: #fff !important;
 }
 .dropdown-item:hover {
-  background-color: #892be2b7 !important;
-  color: orange !important;
+  background-color: #ffc200 !important;
+  color: #474559 !important;
 }

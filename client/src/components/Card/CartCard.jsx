@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import mtCart from "../../assets/image/emptycart.png";
 
-export const CartCard = ({ cart, setCart }) => {
+export const CartCard = ({ cart, setCart, like, setLike }) => {
   const [price, setPrice] = useState(0);
   const [discount, setDiscount] = useState(0);
 
@@ -19,6 +19,7 @@ export const CartCard = ({ cart, setCart }) => {
     setPrice(total);
   });
 
+  //* Discount price in cart
   useEffect(() => {
     let discountTotal = 0;
     cart.map(
@@ -43,6 +44,12 @@ export const CartCard = ({ cart, setCart }) => {
     }
   };
 
+  //* Add to Wishlist
+  const addWishlist = (params) => {
+    console.log(params);
+    setLike([...like, params]);
+  };
+
   //* Remove item
   const removeItem = (params) => {
     let removedItem = cart.filter((cartItem) => cartItem.id !== params.id);
@@ -53,7 +60,7 @@ export const CartCard = ({ cart, setCart }) => {
       <div className="container-sm cart-card">
         {cart.length > 0 ? (
           <div className=" m-sm-5 row d-flex justify-content-center">
-            <div className="border col-md-8 col-12 me-md-4 mx-0 mb-sm-0 mb-4">
+            <div className="border rounded-2 col-md-8 col-12 me-md-4 mx-0 mb-sm-0 mb-4">
               <div className="cart-items m-3">
                 {cart.map((item, index) => (
                   <div key={index} className="mb-4">
@@ -93,11 +100,11 @@ export const CartCard = ({ cart, setCart }) => {
                           +
                         </button>
                       </div>
-                      <Link
-                        to="/wishlist"
+                      <a
+                        onClick={() => addWishlist(item)}
                         className="nav-link btn mb-sm-0 mb-2">
                         SAVE FOR LATER
-                      </Link>
+                      </a>
                       <a
                         onClick={() => removeItem(item)}
                         className="nav-link btn mb-sm-0 mb-2">

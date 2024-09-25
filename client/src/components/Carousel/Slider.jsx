@@ -8,7 +8,7 @@ import sb1 from "../../assets/image/carousel/sb1.png";
 export const Slider = () => {
   return (
     <div>
-      <div id="carouselExampleIndicators" className="carousel slide">
+      <div id="carouselExampleIndicators" className="carousel slide mb-5">
         <div className="carousel-indicators">
           <button
             type="button"
@@ -29,7 +29,7 @@ export const Slider = () => {
             aria-label="Slide 3"></button>
         </div>
         <div className="carousel-inner">
-          <div className="carousel-item active " data-bs-interval="10000">
+          <div className="carousel-item active " data-bs-interval="2000">
             <img src={wc1} className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item" data-bs-interval="2000">

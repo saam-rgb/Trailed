@@ -6,18 +6,22 @@ import rs1 from "../../assets/image/category/rs1.webp";
 export const categories = [
   {
     name: "Luggages",
+    link: "/luggage",
     image: l1,
   },
   {
     name: "Backpacks",
+    link: "/backpack",
     image: bp1,
   },
   {
     name: "Duffles",
+    link: "/duffle",
     image: d1,
   },
   {
     name: "Rucksacks",
+    link: "/rucksack",
     image: rs1,
   },
 ];
