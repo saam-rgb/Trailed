@@ -20,7 +20,7 @@ export const Luggage = ({ cart, setCart, like, setLike }) => {
           <div className="col-md-3">
             <FilterBar />
           </div>
-          <div className="col-md-9">
+          <div className="col-md-9 ">
             <Card
               cart={cart}
               setCart={setCart}
@@ -91,11 +91,11 @@ export const Rucksacks = ({ cart, setCart, like, setLike }) => {
     <div>
       <div className="container-fluid">
         <h1 className="heading">RuckSacks</h1>
-        <div className="row ">
+        <div className="row">
           <div className="col-md-3">
             <FilterBar />
           </div>
-          <div className="col-md-9">
+          <div className="col-md-9 ">
             <Card
               cart={cart}
               setCart={setCart}
@@ -114,7 +114,7 @@ export const Rucksacks = ({ cart, setCart, like, setLike }) => {
 export const NewCollections = ({ cart, setCart, like, setLike }) => {
   return (
     <div>
-      <div className="container-fluid mt-5">
+      <div className="container-fluid mb-5">
         <h1 className="heading">New Collections</h1>
 
         <Card

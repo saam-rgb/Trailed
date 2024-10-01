@@ -6,11 +6,22 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import "./Navbar.css";
 
-export const Navbar = () => {
+export const Navbar = ({ cart }) => {
+  const [isActive, setIsActive] = useState();
   return (
     <div className="navi">
       <div className="nav-container">
         <div className="row top d-flex align-items-center px-4 pt-2">
+          {/* <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> */}
           <div className="img col-md-4">
             <h2>
               <div className="logo d-flex align-items-end">
@@ -52,6 +63,11 @@ export const Navbar = () => {
         <div className="bottom collapse navbar-collapse navbar navbar-expand-lg text-center d-flex justify-content-center">
           <ul className="navbar-nav  mb-2 mb-lg-0 ">
             <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/luggage">
                 Luggage
               </Link>
@@ -74,6 +90,7 @@ export const Navbar = () => {
           </ul>
         </div>
       </div>
+
       <Outlet />
     </div>
   );

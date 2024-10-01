@@ -15,8 +15,8 @@ export const Card = ({ cart, setCart, like, setLike, lists }) => {
     setCart([...cart, params]);
   };
   return (
-    <div className="card-container mb-5">
-      <div className="gap-3 row d-flex  justify-content-start align-items-start">
+    <div className="card-container mb-5 ">
+      <div className="gap-3 row d-flex  justify-content-start align-items-start me-0 pe-0">
         {lists.map((list, index) => (
           // let [wasPrice, image, name, offer] = list;
           <div
@@ -38,8 +38,8 @@ export const Card = ({ cart, setCart, like, setLike, lists }) => {
               <div>
                 <h5 className="card-title">{list.name}</h5>
                 <p className="card-text">
-                  ₹{list.wasPrice - list.wasPrice * list.offer} &ensp;
-                  <span className="was-price">₹{list.wasPrice}</span>
+                  <span className="was-price">₹{list.wasPrice}</span>&ensp; ₹
+                  {list.wasPrice - list.wasPrice * list.offer}
                 </p>
               </div>
               <div className="cart-btn">

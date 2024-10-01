@@ -223,7 +223,7 @@ export const rucksackList = [
 
 export const newCollections = [
   {
-    id: 5,
+    id: 1,
     name: "Trailed MD5",
     image: md5,
     wasPrice: 3400,
@@ -231,7 +231,7 @@ export const newCollections = [
     offer: 0.5,
   },
   {
-    id: 3,
+    id: 2,
     name: "Trailed MD3",
     image: md3,
     wasPrice: 2450,
@@ -239,7 +239,7 @@ export const newCollections = [
     offer: 0.5,
   },
   {
-    id: 4,
+    id: 3,
     name: "Trailed MB4",
     image: mb4,
     wasPrice: 1900,

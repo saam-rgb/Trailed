@@ -8,7 +8,10 @@ import sb1 from "../../assets/image/carousel/sb1.png";
 export const Slider = () => {
   return (
     <div>
-      <div id="carouselExampleIndicators" className="carousel slide mb-5">
+      <div
+        id="carouselExampleIndicators"
+        className="carousel slide mb-5"
+        data-bs-ride="carousel">
         <div className="carousel-indicators">
           <button
             type="button"

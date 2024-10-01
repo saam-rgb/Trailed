@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const CategoryBox = () => {
   return (
-    <div className="container my-4">
+    <div className="container mb-5">
       <div className="row ">
         {categories.map((category, index) => (
           <div className="col-md-3 cat-card" key={index}>

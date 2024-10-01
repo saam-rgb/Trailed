@@ -14,7 +14,17 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Navbar />}>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  cart={cart}
+                  setCart={setCart}
+                  like={like}
+                  setLike={setLike}
+                />
+              }
+            />
             <Route
               path="/luggage"
               element={

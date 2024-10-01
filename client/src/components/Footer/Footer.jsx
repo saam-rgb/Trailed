@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <div className="bg p-5">
       <div className=" row">
-        <div className="col-md-3">
+        <div className="col-md-3 mb-sm-0 mb-4">
           <h3 className="tag">Warm hugs, Trailed</h3>
           <p>
             We’ll email you important updates, new launch info and the
@@ -14,7 +14,7 @@ export const Footer = () => {
           </p>
           <input type="text" className="form-control" placeholder="E-mail" />
         </div>
-        <div className="col-md-3">
+        <div className="col-md-3 mb-sm-0 mb-4">
           <p>
             <strong>
               For Gifting & Corporate orders WhatsApp us at +91 91502 45248 or
@@ -22,7 +22,7 @@ export const Footer = () => {
             </strong>
           </p>
         </div>
-        <div className="col-md-3">
+        <div className="col-md-3 mb-sm-0 mb-4">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link to="/faq" className="navLink">
@@ -71,7 +71,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="col-md-3">
+        <div className="col-md-3 ">
           <div>
             <p className="tag">#LeaveAMark</p>
             <p>

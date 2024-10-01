@@ -26,8 +26,8 @@ export const WishlistCard = ({ like, setLike, cart, setCart }) => {
                   {like.map((item, index) => (
                     <div
                       key={index}
-                      className="mb-4 d-flex justify-content-between">
-                      <div className="d-flex justify-content-center align-items-center">
+                      className="mb-4 d-flex justify-content-sm-between flex-sm-nowrap flex-wrap align-items-center">
+                      <div className="d-flex justify-content-center align-items-center flex-sm-row flex column">
                         <div className="col-md-2 col-sm-4 col-8">
                           <div className="image">
                             <img
@@ -37,33 +37,35 @@ export const WishlistCard = ({ like, setLike, cart, setCart }) => {
                             />
                           </div>
                         </div>
-                        <div className="card-body ms-3">
-                          <h5 className="card-title mb-2">{item.name}</h5>
-                          <div className="d-flex justify-content-between">
-                            <p className="card-text ">
-                              <span className="was-price">
-                                ₹{item.wasPrice}
-                              </span>
-                              &ensp; ₹
-                              {item.wasPrice - item.wasPrice * item.offer}
-                              &ensp;
-                              <span className="offer">
-                                {item.offer * 100}% Off
-                              </span>
-                            </p>
+                        <div className="card-body ms-3 d-flex flex-sm-row flex-column">
+                          <div className="card-body ms-3 mb-sm-0 mb-2">
+                            <h5 className="card-title mb-2">{item.name}</h5>
+                            <div className="d-flex justify-content-between">
+                              <p className="card-text ">
+                                <span className="was-price">
+                                  ₹{item.wasPrice}
+                                </span>
+                                &ensp; ₹
+                                {item.wasPrice - item.wasPrice * item.offer}
+                                &ensp;
+                                <span className="offer">
+                                  {item.offer * 100}% Off
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                          <div className="d-flex flex-sm-column flex-row-reverse justify-content-sm-between align-items-sm-end align-items-center ">
+                            <DeleteOutlinedIcon
+                              onClick={() => removeItem(item)}
+                              className="delete-icon mb-sm-0 mb-2"
+                            />
+                            <a
+                              className="nav-link mb-sm-0 mb-2 btn  add-to-cart "
+                              onClick={() => addCart(item)}>
+                              ADD TO CART
+                            </a>
                           </div>
                         </div>
-                      </div>
-                      <div className="d-flex flex-column justify-content-between align-items-end">
-                        <DeleteOutlinedIcon
-                          onClick={() => removeItem(item)}
-                          className=" mb-sm-0 mb-2"
-                        />
-                        <a
-                          className="nav-link mb-sm-0 mb-2 btn"
-                          onClick={() => addCart(item)}>
-                          ADD TO CART
-                        </a>
                       </div>
                     </div>
                   ))}
