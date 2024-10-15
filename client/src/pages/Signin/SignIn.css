@@ -1,0 +1,42 @@
+.container {
+  height: 100vh !important;
+
+  align-content: space-between !important;
+  color: #fff;
+}
+.pad {
+  margin-top: 80px !important;
+  margin-bottom: 50px !important;
+}
+.pad .nav-link {
+  color: #474559;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #474559;
+}
+.form-control {
+  width: 300px !important;
+  font-size: 16px !important;
+  outline: none !important;
+  padding: 5px 10px !important;
+  border-radius: 3px !important;
+}
+.btn {
+  background-color: #ffc200 !important;
+  border-radius: 3px !important;
+  padding: 7px 15px !important;
+  font-weight: 500 !important;
+}
+.have-account {
+  font-size: 14px;
+}
+.have-account .nav-link {
+  all: unset !important;
+  cursor: pointer !important;
+  text-decoration: underline !important;
+  color: #ffc200 !important;
+}

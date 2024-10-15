@@ -6,12 +6,12 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import "./Navbar.css";
 
-export const Nav = () => {
+export const Nav = ({ isLogged, setIsLogged }) => {
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid d-flex justify-content-between">
-          <div className="logo d-flex align-items-end text-center">
+          <div className="logo d-flex align-items-start text-center">
             <img src={logo} width="50px" />
             <Link className="nav-link ps-2" to="/">
               Trailed
@@ -57,11 +57,6 @@ export const Nav = () => {
             </ul>
             <div className="profile d-flex  justify-content-center ms-0">
               <h3>
-                <Link className="nav-link px-2" to="/profile">
-                  <AccountCircleOutlinedIcon className="icon-color" />
-                </Link>
-              </h3>
-              <h3>
                 <Link className="nav-link px-2" to="/wishlist">
                   <FavoriteBorderOutlinedIcon className="icon-color" />
                 </Link>
@@ -71,6 +66,17 @@ export const Nav = () => {
                   <ShoppingCartOutlinedIcon className="icon-color" />
                 </Link>
               </h3>
+              {isLogged ? (
+                <h3>
+                  <Link className="nav-link px-2" to="/profile">
+                    <AccountCircleOutlinedIcon className="icon-color" />
+                  </Link>
+                </h3>
+              ) : (
+                <Link to="/login" className="btn">
+                  Login
+                </Link>
+              )}
             </div>
           </div>
         </div>

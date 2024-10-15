@@ -9,7 +9,7 @@ export const Feature = () => {
   return (
     <div className="container mb-5">
       <div className="row">
-        <div className="col-md-4 d-flex flex-column  align-items-center mb-sm-0 mb-4">
+        <div className="col-md-4 d-flex flex-column  align-items-center mb-md-0 mb-4">
           <CalendarMonthOutlinedIcon className="mb-2" />
           <h3>Enjoy 30 day trial</h3>
           <p className="text-center">
@@ -17,7 +17,7 @@ export const Feature = () => {
             for you, return it for a full refund. T&C apply
           </p>
         </div>
-        <div className="col-md-4 d-flex flex-column  align-items-center mb-sm-0 mb-4">
+        <div className="col-md-4 d-flex flex-column  align-items-center mb-md-0 mb-4">
           <div className="d-flex mb-2">
             <StarIcon className="" />
             <StarIcon className="" />

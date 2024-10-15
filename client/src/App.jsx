@@ -6,15 +6,19 @@ import { Cart } from "./pages/Cart/Cart";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
 import { Nav } from "./components/Navbar/Nav";
+import Signup from "./pages/Signin/Signup";
+import Login from "./pages/Signin/Login";
 
 function App() {
+  const [islogged, setIsLogged] = useState(false);
   const [cart, setCart] = useState([]);
   const [like, setLike] = useState([]);
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<Nav />}>
+          <Route
+            element={<Nav islogged={islogged} setIsLogged={setIsLogged} />}>
             <Route
               path="/"
               element={
@@ -92,6 +96,11 @@ function App() {
                 setLike={setLike}
               />
             }
+          />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/login"
+            element={<Login islogged={islogged} setIsLogged={setIsLogged} />}
           />
         </Routes>
       </BrowserRouter>
