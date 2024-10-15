@@ -1,21 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.css";
+import { Link } from "react-router-dom";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import { toast, Toaster } from "sonner";
 
 // * Card in Product page
 export const Card = ({ cart, setCart, like, setLike, lists }) => {
+  const [text, setText] = useState("Add to Cart");
+
   const addWishlist = (params) => {
     console.log(params);
     console.log(...like);
     setLike([...like, params]);
+    toast.success(`${params.name} added to`, {
+      action: <Link to="/wishlist">Shopping list</Link>,
+    });
   };
   const addCart = (params) => {
     console.log(params);
 
     setCart([...cart, params]);
+    toast.success(`${params.name} added to`, {
+      action: <Link to="/cart">Cart</Link>,
+    });
+  };
+
+  const textChange = (params) => {
+    if (params.id === params.id) {
+      setText("Added to cart");
+    } else {
+      text;
+    }
   };
   return (
     <div className="card-container mb-5 ">
+      <Toaster
+        richColors
+        position="top-center"
+        toastOptions={{
+          className: "my-toast",
+        }}
+      />
       <div className="gap-3 row d-flex  justify-content-start align-items-start me-0 pe-0">
         {lists.map((list, index) => (
           // let [wasPrice, image, name, offer] = list;
@@ -44,7 +69,7 @@ export const Card = ({ cart, setCart, like, setLike, lists }) => {
               </div>
               <div className="cart-btn">
                 <a onClick={() => addCart(list)} className="btn btn-primary">
-                  Add to cart
+                  {text}
                 </a>
               </div>
             </div>

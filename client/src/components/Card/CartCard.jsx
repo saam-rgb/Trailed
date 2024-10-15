@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import mtCart from "../../assets/image/emptycart.png";
+import { toast, Toaster } from "sonner";
 
 export const CartCard = ({ cart, setCart, like, setLike }) => {
   const [price, setPrice] = useState(0);
@@ -47,20 +48,32 @@ export const CartCard = ({ cart, setCart, like, setLike }) => {
   //* Add to Wishlist
   const addWishlist = (params) => {
     console.log(params);
+    removeItem(params);
     setLike([...like, params]);
+    toast.info(`${params.name} added to`, {
+      action: <Link to="/wishlist">Shopping list</Link>,
+    });
   };
 
   //* Remove item
   const removeItem = (params) => {
     let removedItem = cart.filter((cartItem) => cartItem.id !== params.id);
+    toast.error(`${params.name} removed from Cart`);
     setCart(removedItem);
   };
   return (
     <div className="cart-main">
+      <Toaster
+        richColors
+        position="top-center"
+        toastOptions={{
+          className: "my-toast",
+        }}
+      />
       <div className="container-sm cart-card">
         {cart.length > 0 ? (
           <div className=" m-sm-5 row d-flex justify-content-center">
-            <div className="border rounded-2 col-md-8 col-12 me-md-4 mx-0 mb-sm-0 mb-4">
+            <div className="border rounded-2 col-md-8 col-12 me-md-4 mx-0 mb-sm-0 mb-4 ">
               <div className="cart-items m-3">
                 {cart.map((item, index) => (
                   <div key={index} className="mb-4">
@@ -87,7 +100,7 @@ export const CartCard = ({ cart, setCart, like, setLike }) => {
                     <div className="d-flex bottom-div flex-wrap justify-content-sm-start justify-content-center">
                       <div className="d-flex mb-sm-0 mb-2">
                         <button
-                          className="counter-btn btn me-2"
+                          className="counter-btn btn me-2 lh-1"
                           onClick={() => addSubItem(item, -1)}>
                           -
                         </button>
@@ -95,7 +108,7 @@ export const CartCard = ({ cart, setCart, like, setLike }) => {
                           <p>{item.count}</p>
                         </div>
                         <button
-                          className="counter-btn btn ms-2"
+                          className="counter-btn btn ms-2 lh-1 d-flex justify-content-center "
                           onClick={() => addSubItem(item, 1)}>
                           +
                         </button>

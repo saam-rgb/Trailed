@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+import logo from "../../../public/logo.png";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import "./Navbar.css";
 
 export const Nav = () => {
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex align-items-start justify-content-between">
-          <a class="navbar-brand" href="#">
-            Navbar
-          </a>
+        <div class="container-fluid d-flex justify-content-between">
+          <div className="logo d-flex align-items-end text-center">
+            <img src={logo} width="50px" />
+            <Link className="nav-link ps-2" to="/">
+              Trailed
+            </Link>
+          </div>
           <button
             class="navbar-toggler"
             type="button"
@@ -18,74 +27,55 @@ export const Nav = () => {
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div
-            class="collapse navbar-collapse d-flex justify-content-end"
-            id="navbarSupportedContent">
-            <div className="d-flex flex-column">
-              <div className="d-flex justify-content-between">
-                <form class="d-flex" role="search">
-                  <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                  <button class="btn btn-outline-success" type="submit">
-                    Search
-                  </button>
-                </form>
-                <div className="profile d-flex col-md-4 justify-content-end">
-                  <h3>
-                    <Link className="nav-link px-2" to="/profile">
-                      <AccountCircleOutlinedIcon className="icon-color" />
-                    </Link>
-                  </h3>
-                  <h3>
-                    <Link className="nav-link px-2" to="/wishlist">
-                      <FavoriteBorderOutlinedIcon className="icon-color" />
-                    </Link>
-                  </h3>
-                  <h3>
-                    <Link className="nav-link px-2" to="/cart">
-                      <ShoppingCartOutlinedIcon className="icon-color" />
-                    </Link>
-                  </h3>
-                </div>
-              </div>
-
-              <div>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <Link class="nav-link" aria-current="page" to="/">
-                      Home
-                    </Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link class="nav-link" to="luggage">
-                      Luggage
-                    </Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link class="nav-link" aria-current="page" to="/backpack">
-                      Backpack
-                    </Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link class="nav-link" to="/duffle">
-                      Duffle
-                    </Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link class="nav-link" aria-current="page" to="/rucksack">
-                      Rucksack
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0  d-flex align-items-center">
+              <li className="nav-item mb-0">
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item mb-0">
+                <Link className="nav-link" to="/luggage">
+                  Luggage
+                </Link>
+              </li>
+              <li className="nav-item mb-0">
+                <Link className="nav-link" to="/backpack">
+                  Backpacks
+                </Link>
+              </li>
+              <li className="nav-item mb-0">
+                <Link className="nav-link" to="/duffle">
+                  Duffle
+                </Link>
+              </li>
+              <li className="nav-item mb-0">
+                <Link className="nav-link" to="/rucksack">
+                  Rucksacks
+                </Link>
+              </li>
+            </ul>
+            <div className="profile d-flex  justify-content-center ms-0">
+              <h3>
+                <Link className="nav-link px-2" to="/profile">
+                  <AccountCircleOutlinedIcon className="icon-color" />
+                </Link>
+              </h3>
+              <h3>
+                <Link className="nav-link px-2" to="/wishlist">
+                  <FavoriteBorderOutlinedIcon className="icon-color" />
+                </Link>
+              </h3>
+              <h3>
+                <Link className="nav-link px-2" to="/cart">
+                  <ShoppingCartOutlinedIcon className="icon-color" />
+                </Link>
+              </h3>
             </div>
           </div>
         </div>
       </nav>
+      <Outlet />
     </div>
   );
 };

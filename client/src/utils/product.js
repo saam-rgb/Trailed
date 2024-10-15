@@ -24,6 +24,7 @@ export const luggageList = [
     wasPrice: 2960,
     count: 1,
     offer: 0.3,
+    text: "",
   },
   {
     id: 2,

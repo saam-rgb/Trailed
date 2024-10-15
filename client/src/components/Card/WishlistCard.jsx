@@ -2,20 +2,42 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import mtCart from "../../assets/image/emptycart.png";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+import { toast, Toaster } from "sonner";
 
 export const WishlistCard = ({ like, setLike, cart, setCart }) => {
   //* Add to Cart
   const addCart = (params) => {
+    removeItem(params);
     setCart([...cart, params]);
+    toast.info(`${params.name} added to`, {
+      action: <Link to="/cart">Cart</Link>,
+    });
   };
 
   //* Remove item
   const removeItem = (params) => {
     let removedItem = like.filter((cartItem) => cartItem.id !== params.id);
+    toast.error(`${params.name} removed from Shopping list`);
     setLike(removedItem);
   };
   return (
     <div className="cart-main">
+      <Toaster
+        richColors
+        position="top-center"
+        toastOptions={{
+          className: "my-toast",
+        }}
+      />
+      <div className="path d-flex">
+        <Link className="nav-link ps-2" to="/">
+          Home
+        </Link>
+        <span>-]</span>
+        <Link className="nav-link ps-2" to="/wishlist">
+          Shopping List
+        </Link>
+      </div>
       <div className="container-sm cart-card">
         {like.length > 0 ? (
           <div className="">

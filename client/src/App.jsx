@@ -5,6 +5,7 @@ import { createContext, useState } from "react";
 import { Cart } from "./pages/Cart/Cart";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
+import { Nav } from "./components/Navbar/Nav";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -13,7 +14,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<Navbar />}>
+          <Route element={<Nav />}>
             <Route
               path="/"
               element={
